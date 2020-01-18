@@ -1,5 +1,5 @@
 function solution(nums) {
-  console.log(Math.max(...(nums.map(n => +n))))
+  console.log(Math.max(...(nums.map(n => +n))));
 }
 
 // DO NOT TOUCH BELOW - To handle I/O
