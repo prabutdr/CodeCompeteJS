@@ -7,7 +7,7 @@ function main(input) {
   const m = +input.shift();
 
   const edges = {};
-  for (let i = 0; i < input.length; i += 2) {
+  for (let i = 0; i < 2 * m; i += 2) {
     const x = +input[i];
     const y = +input[i + 1];
 
@@ -17,6 +17,7 @@ function main(input) {
   // console.log(edges);
 
   const visited = [];
+  visited.length = n + 1;
   const result = [];
   visitDFS(1);
 
@@ -30,7 +31,6 @@ function main(input) {
     for (let adj of edges[index]) {
       if (!visited[adj]) {
         visitDFS(adj);
-        // result.push(adj);
       }
     }
   }
