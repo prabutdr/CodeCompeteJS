@@ -1,8 +1,25 @@
 function main() {
   let tcs = nextNumber();
   for (let tc = 1; tc <= tcs; tc++) {
+    const digits = nextLine().split('');
+    let result = '';
+    let currentDepth = 0;
 
-    console.log(`Case #${tc}: ${tc}`);
+    for (let digit of digits) {
+      const value = +digit;
+
+      if (currentDepth < value)
+        result += '('.repeat(value - currentDepth);
+      else if (currentDepth > value)
+        result += ')'.repeat(currentDepth - value);
+
+        result += digit;
+      currentDepth = value;
+    }
+    if (currentDepth > 0)
+      result += ')'.repeat(currentDepth);
+
+    console.log(`Case #${tc}: ${result}`);
   }
 }
 
