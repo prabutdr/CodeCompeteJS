@@ -4,24 +4,25 @@
  * @param {string} T
  * @return {boolean}
  */
-var backspaceCompare = function(S, T) {
+var backspaceCompare = function (S, T) {
   return revisedString(S) === revisedString(T);
 };
 
-function revisedString(str) {
+function revisedString (str) {
   const stack = [];
 
-  for (let ch of str) {
-    if (ch === '#')
+  for (const ch of str) {
+    if (ch === '#') {
       stack.pop();
-    else 
+    } else {
       stack.push(ch);
+    }
   }
   return stack.join('');
 }
 
-console.log(backspaceCompare("ab#c", "ad#c"));
-console.log(backspaceCompare("ab##", "c#d#"));
-console.log(backspaceCompare("a##c", "#a#c"));
-console.log(backspaceCompare("a#c", "b"));
-console.log(backspaceCompare("bxj##tw", "bxo#j##tw"));
+console.log(backspaceCompare('ab#c', 'ad#c'));
+console.log(backspaceCompare('ab##', 'c#d#'));
+console.log(backspaceCompare('a##c', '#a#c'));
+console.log(backspaceCompare('a#c', 'b'));
+console.log(backspaceCompare('bxj##tw', 'bxo#j##tw'));
