@@ -7,7 +7,7 @@ var checkValidString = function (s) {
   let lowPossibleBrackets = 0;
   let highPossibleBrackets = 0;
 
-  for (let ch of s) {
+  for (const ch of s) {
     lowPossibleBrackets += (ch === '(') ? 1 : -1;
     highPossibleBrackets += (ch !== ')') ? 1 : -1;
     if (highPossibleBrackets < 0) {
