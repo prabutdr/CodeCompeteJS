@@ -70,3 +70,5 @@ var leftMostColumnWithOne = function(binaryMatrix) {
   }
   return leftMostIdx === cols ? -1: leftMostIdx;
 };
+
+// TODO: should try optimal approach
